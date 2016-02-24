@@ -29,7 +29,7 @@ class Community(object):
             self.locale = 'en'
 
         if kwargs.get('region'):
-            if region not in constants.AVAILABLE_REGIONS:
+            if kwargs['region'] not in constants.AVAILABLE_REGIONS:
                 raise ValueError("Invalid Region provided.  Region must be one of 'us', 'eu', 'kr' or 'tw'.")
             else:
                 self.region = kwargs['region']
