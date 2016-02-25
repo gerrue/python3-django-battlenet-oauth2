@@ -7,7 +7,7 @@ THIS LIBRARY IS NOT ASSOCIATED WITH, OR ENDORSED BY, BLIZZARD IN ANY WAY.
 
 #Installation
 
-    pip install django-battlenet
+    git clone https://github.com/gerrue/python3-django-battlenet-oauth2
 
 # OAuth2
 
