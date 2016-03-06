@@ -6,19 +6,19 @@ class Profile(Community):
 
     def __init__(self, *args, **kwargs):
         super(Profile, self).__init__(*args, **kwargs)
-        self.idsc = kwargs.get('idsc', None)
+        self.id = kwargs.get('id', None)
         self.name = kwargs.get('name', None)
 
-    def get(self, idsc=None, name=None):
+    def get(self, id=None, name=None):
         if name:
             self.name = name
         else:
             if not self.name:
                 raise ValueError('Name required.')
-        if idsc:
-            self.idsc = idsc
+        if id:
+            self.id = id
         else:
-            if not self.idsc:
-                raise ValueError('ID is required, us idsc to set this value')
+            if not self.id:
+                raise ValueError('ID is required')
 
-        return self.make_request(self.ENDPOINT % (self.idsc, self.name))
+        return self.make_request(self.ENDPOINT % (self.id, self.name))
